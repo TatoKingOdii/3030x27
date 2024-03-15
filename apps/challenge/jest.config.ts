@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'def',
+  displayName: 'challenge',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/apps/def',
+  coverageDirectory: '../../coverage/apps/challenge',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

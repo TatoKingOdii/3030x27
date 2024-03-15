@@ -1,23 +1,35 @@
 {
-  "name": "def",
+  "name": "challenge",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "c3030x27",
-  "sourceRoot": "apps/def/src",
+  "sourceRoot": "apps/challenge/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/def",
-        "index": "apps/def/src/index.html",
-        "browser": "apps/def/src/main.ts",
+        "outputPath": "dist/apps/challenge",
+        "index": "apps/challenge/src/index.html",
+        "browser": "apps/challenge/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/def/tsconfig.app.json",
+        "tsConfig": "apps/challenge/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/def/src/favicon.ico", "apps/def/src/assets"],
-        "styles": ["apps/def/src/styles.scss"],
+        "assets": [
+          "apps/challenge/src/assets",
+          {
+            "glob": "**/*.svg",
+            "input": "node_modules/ionicons/dist/ionicons/svg",
+            "output": "./svg"
+          }
+        ],
+        "styles": [
+          "apps/challenge/src/styles.scss",
+          {
+            "input": "apps/challenge/src/theme/variables.scss"
+          }
+        ],
         "scripts": []
       },
       "configurations": {
@@ -48,10 +60,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "def:build:production"
+          "buildTarget": "challenge:build:production"
         },
         "development": {
-          "buildTarget": "def:build:development"
+          "buildTarget": "challenge:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -59,14 +71,14 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "def:build"
+        "buildTarget": "challenge:build"
       }
     },
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "def:build",
-        "staticFilePath": "dist/apps/def/browser"
+        "buildTarget": "challenge:build",
+        "staticFilePath": "dist/apps/challenge/browser"
       }
     }
   }
