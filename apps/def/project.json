@@ -1,0 +1,73 @@
+{
+  "name": "def",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "c3030x27",
+  "sourceRoot": "apps/def/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/def",
+        "index": "apps/def/src/index.html",
+        "browser": "apps/def/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/def/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/def/src/favicon.ico", "apps/def/src/assets"],
+        "styles": ["apps/def/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "def:build:production"
+        },
+        "development": {
+          "buildTarget": "def:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "def:build"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "def:build",
+        "staticFilePath": "dist/apps/def/browser"
+      }
+    }
+  }
+}
