@@ -1,0 +1,67 @@
+<ion-header>
+  <app-nav-bar-auth></app-nav-bar-auth>
+</ion-header>
+<ion-content>
+  @if(weatherFacade.loadingWeather$ | async) {
+    <div style="display: grid" class="ion-justify-content-center">
+      <ion-spinner name="dots"></ion-spinner>
+    </div>
+  } @else {
+      @for(weather of weatherFacade.weather$ | async; track weather) {
+            <ion-card>
+              <ion-card-header style="flex-direction: column">
+                <ion-card-title>
+                  <h1>{{weather.name}}</h1>
+                </ion-card-title>
+                <ion-card-subtitle>
+                  <h5>Today's Weather {{today | date}}</h5>
+                </ion-card-subtitle>
+                <ion-item lines="none" class="header">
+                  @if(weather.description) {
+                    <ion-label>
+                      <p>{{weather.description}}</p>
+                      <p>{{weather.temperature}}</p>
+                      <p>{{weather.wind}}</p>
+                    </ion-label>
+                  } @else {
+                    <ion-label>
+                      <p>Weather data unavailable</p>
+                    </ion-label>
+                  }
+                </ion-item>
+              </ion-card-header>
+              <ion-card-content class="ion-no-padding">
+                <ion-accordion-group>
+                  <ion-accordion value="first">
+                    <ion-item slot="header" color="light">
+                      <ion-label>
+                        <h3 class="forecast-label">Forecast</h3>
+                      </ion-label>
+                    </ion-item>
+                    <div class="forecast-container" slot="content">
+                      @for(forecast of weather.forecast; track forecast.day) {
+                        <ion-item lines="none">
+                          <ion-label>
+                            <h5>{{today | futureDate:forecast.day | date}}</h5>
+                            <p>{{forecast.temperature}}</p>
+                            <p>{{forecast.wind}}</p>
+                          </ion-label>
+                        </ion-item>
+                      } @empty {
+                        <ion-item lines="none">
+                          <h2>No forecast data available</h2>
+                        </ion-item>
+                      }
+                    </div>
+                  </ion-accordion>
+                </ion-accordion-group>
+              </ion-card-content>
+            </ion-card>
+      } @empty {
+        No weather data available
+      }
+  }
+</ion-content>
+<ion-footer>
+  <app-footer-bar></app-footer-bar>
+</ion-footer>

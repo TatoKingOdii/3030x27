@@ -1,0 +1,19 @@
+<ion-header>
+  <app-nav-bar-auth></app-nav-bar-auth>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-align-items-center ion-justify-content-center">
+      <ion-col sizeMd="6" sizeSm="12">
+        <app-location-list [locations]="locationFacade.locations$ | async"
+                           [loadingLocations]="locationFacade.isLoadingLocations$ | async"
+                           (deleteLoc)="locationFacade.deleteLocation($event)"
+                           (editLoc)="locationFacade.openLocationModal($event)">
+        </app-location-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <app-footer-bar></app-footer-bar>
+</ion-footer>

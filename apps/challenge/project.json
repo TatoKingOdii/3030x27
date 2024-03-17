@@ -2,7 +2,7 @@
   "name": "challenge",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "c3030x27",
+  "prefix": "c3030x26",
   "sourceRoot": "apps/challenge/src",
   "tags": [],
   "targets": {

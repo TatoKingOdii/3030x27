@@ -1,0 +1,35 @@
+h3.forecast-label {
+  font-size: 1.5em;
+}
+
+h1,h2,h3, h4, h5 {
+  margin: 0;
+  padding-top: 0;
+}
+
+ion-card-header {
+  padding-bottom: 0;
+  background: var( --ion-color-light-tint);
+}
+
+ion-item.header {
+  --background: var( --ion-color-light-tint);
+  --padding-start: 0;
+}
+
+@media (max-width: 599px) {
+  .forecast-container {
+    display: grid;
+    grid-template-columns: 100vw;
+    background: var( --ion-item-background);
+  }
+}
+@media (min-width: 600px){
+  .forecast-container {
+    display: grid;
+    grid-template-columns: 30vw 30vw 30vw;
+    justify-content: space-evenly;
+    background: var( --ion-item-background);
+  }
+}
+

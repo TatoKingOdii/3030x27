@@ -1,0 +1,8 @@
+{
+  "name": "error-pages",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/common/error-pages/src",
+  "projectType": "library",
+  "targets": {},
+  "tags": []
+}

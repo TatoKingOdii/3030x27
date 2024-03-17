@@ -1,0 +1,36 @@
+<ion-list inset="true">
+  <ion-list-header class="ion-padding-end">
+    <ion-label>
+      <h1>Locations</h1>
+    </ion-label>
+    <ion-button fill="clear" color="success" class="ion-no-padding" shape="round" (click)="editLocation(null)">
+      <ion-icon slot="icon-only" name="add-circle"></ion-icon>
+    </ion-button>
+  </ion-list-header>
+  @if(loadingLocations) {
+    <ion-item style="display: grid" class="ion-align-items-center ion-justify-content-center">
+      <ion-spinner name="dots"></ion-spinner>
+    </ion-item>
+  } @else {
+    @for (loc of locations!; track loc; let idx = $index) {
+      <ion-item>
+        <ion-label>
+          <h2>{{loc.name}}</h2>
+          <p>Climate: {{loc.climate}}</p>
+          <p>Cost of Living: {{loc.cost}}</p>
+          <p>Local Attractions: {{loc.attractions}}</p>
+        </ion-label>
+        <ion-button slot="end" fill="clear" class="ion-no-margin" (click)="editLocation(idx)">
+          <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
+        </ion-button>
+        <ion-button slot="end" fill="clear" color="danger" class="ion-no-margin" (click)="deleteLocation(idx)">
+          <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    } @empty {
+      <ion-item>
+        There are no locations!
+      </ion-item>
+    }
+  }
+</ion-list>

@@ -1,0 +1,17 @@
+{
+  "name": "weather",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/feature/weather/src",
+  "prefix": "c3030x25",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/feature/weather/jest.config.ts"
+      }
+    }
+  }
+}
