@@ -16,7 +16,7 @@ import {
 import {RouterLink, RouterLinkActive} from "@angular/router";
 import {Demo, DEMOS} from "~challenge/types";
 import { FooterBarComponent } from '~challenge/footer';
-import { NavBarAuthComponent } from '~challenge/auth';
+import { NavBarComponent } from '~challenge/auth';
 
 @Component({
   selector: 'app-home',
@@ -24,7 +24,7 @@ import { NavBarAuthComponent } from '~challenge/auth';
     IonCol, IonCard, IonCardHeader, IonCardContent,
     IonCardTitle, IonCardSubtitle, RouterLink,
     RouterLinkActive, IonHeader, IonFooter, IonText,
-    FooterBarComponent, NavBarAuthComponent],
+    FooterBarComponent, NavBarComponent],
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true

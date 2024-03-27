@@ -16,7 +16,7 @@ import {LocationListComponent} from "./location-list/location-list.component";
 import {AsyncPipe} from "@angular/common";
 import {LocationFacade} from "~challenge/location";
 import { FooterBarComponent } from '~challenge/footer';
-import { NavBarAuthComponent } from '~challenge/auth';
+import { NavBarComponent } from '~challenge/auth';
 
 @Component({
   selector: 'app-location',
@@ -34,7 +34,7 @@ import { NavBarAuthComponent } from '~challenge/auth';
     AsyncPipe,
     IonHeader,
     IonFooter,
-    NavBarAuthComponent,
+    NavBarComponent,
     FooterBarComponent
   ],
   templateUrl: './location.page.html',

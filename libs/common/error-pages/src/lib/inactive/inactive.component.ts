@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IonContent, IonFooter, IonHeader, IonText } from '@ionic/angular/standalone';
 import { RouterLink } from '@angular/router';
 import { FooterBarComponent } from '~challenge/footer';
-import { NavBarUnauthComponent } from '~challenge/auth';
+import {NavBarComponent} from '~challenge/auth';
 
 @Component({
   selector: 'app-inactive',
@@ -13,7 +13,7 @@ import { NavBarUnauthComponent } from '~challenge/auth';
     IonFooter,
     IonContent,
     FooterBarComponent,
-    NavBarUnauthComponent
+    NavBarComponent
   ],
   templateUrl: './inactive.component.html',
   styleUrls: ['./inactive.component.scss'],

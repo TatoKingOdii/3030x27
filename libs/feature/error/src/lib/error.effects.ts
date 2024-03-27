@@ -11,6 +11,7 @@ import {
 } from "~challenge/location";
 import {QuoteActions} from "~challenge/quote";
 import {WeatherActions} from "~challenge/weather";
+import {WorldActions} from "~challenge/economic";
 
 
 @Injectable()
@@ -21,7 +22,8 @@ export class ErrorEffects {
   errorEffect$ = createEffect(() => this.actions$.pipe(
     ofType(authLoginFailure, authLogoutFailure, createLocationFailure,
       deleteLocationFailure, updateLocationFailure, loadLocationsFailure,
-      QuoteActions.getQuotesFailure, WeatherActions.loadWeatherFailure),
+      QuoteActions.getQuotesFailure, WeatherActions.loadWeatherFailure,
+      WorldActions.loadFreshWorldsFailure, WorldActions.loadWorldPageFailure),
     switchMap(action => this.toastUiService.presentToast(action.error))
   ), {dispatch: false});
 }

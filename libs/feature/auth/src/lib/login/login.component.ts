@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import {Component} from '@angular/core';
+import {RouterLink} from '@angular/router';
 import {
   IonButton,
   IonButtons,
@@ -13,10 +13,10 @@ import {
   IonLabel,
   IonText
 } from '@ionic/angular/standalone';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { AuthFacade, DEFAULT_USER, NavBarUnauthComponent, User } from '~challenge/auth';
-import { FooterBarComponent } from '~challenge/footer';
-import { TypedForm } from '~challenge/types';
+import {FormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
+import {AuthFacade, DEFAULT_USER, NavBarComponent, User} from '~challenge/auth';
+import {FooterBarComponent} from '~challenge/footer';
+import {TypedForm} from '~challenge/types';
 
 @Component({
   selector: 'app-login',
@@ -35,7 +35,7 @@ import { TypedForm } from '~challenge/types';
     IonLabel,
     IonText,
     FooterBarComponent,
-    NavBarUnauthComponent,
+    NavBarComponent,
   ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],

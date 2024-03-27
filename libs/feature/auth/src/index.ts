@@ -1,5 +1,4 @@
-export * from './lib/nav-bar-unauth/nav-bar-unauth.component';
-export * from './lib/nav-bar-auth/nav-bar-auth.component';
+export * from './lib/nav-bar/nav-bar.component';
 export * from './lib/login/login.component';
 export * from './lib/auth-guard/auth.guard';
 export * from './lib/auth.facade';

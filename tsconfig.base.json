@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "~challenge/economic": ["libs/feature/economic/src/index.ts"],
       "~challenge/auth": ["libs/feature/auth/src/index.ts"],
       "~challenge/cats": ["libs/cats/src/index.ts"],
       "~challenge/error": ["libs/feature/error/src/index.ts"],

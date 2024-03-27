@@ -8,11 +8,13 @@ import {UnauthorizedComponent} from "~challenge/error-pages";
 import {InactiveComponent} from "~challenge/error-pages";
 import {WeatherPage} from "~challenge/weather";
 import { CatUrlPipe } from '~challenge/cats';
+import {EconomicPage} from "~challenge/economic";
 
 export const routes: Routes = [
-  {path: 'home', component: HomePage, canActivate: []},
-  {path: 'weather', component: WeatherPage, canActivate: []},
-  {path: 'location', component: LocationPage, canActivate: []},
+  {path: 'home', component: HomePage, canActivate: [authGuard]},
+  {path: 'weather', component: WeatherPage, canActivate: [authGuard]},
+  {path: 'world', component: EconomicPage, canActivate: [authGuard]},
+  {path: 'location', component: LocationPage, canActivate: [authGuard]},
   {path: 'location/:id', component: LocationPage, canActivate: [authGuard]},
   {path: 'login', component: LoginComponent},
   {path: 'inactive', component: InactiveComponent},
