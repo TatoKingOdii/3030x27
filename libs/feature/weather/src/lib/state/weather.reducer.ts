@@ -34,25 +34,5 @@ export const weatherReducer = createReducer(
     adapter.setAll([], ({...state, loadingWeather: true}))),
   on(WeatherActions.loadWeatherSuccess, (state, {data}) =>
     adapter.upsertOne(data, ({...state, loadingWeather: false}))),
+  on(WeatherActions.loadWeatherFailure, (state) => ({...state, loadingWeather: false}))
 );
-
-export const isWeatherLoading = (state: WeatherState) => state.loadingWeather;
-
-const {
-  selectIds,
-  selectEntities,
-  selectAll,
-  selectTotal,
-} = adapter.getSelectors();
-
-// select the array of user ids
-export const selectWeatherIds = selectIds;
-
-// select the dictionary of user entities
-export const selectWeatherEntities = selectEntities;
-
-// select the array of users
-export const selectAllWeather = selectAll;
-
-// select the total user count
-export const selectWeatherTotal = selectTotal;

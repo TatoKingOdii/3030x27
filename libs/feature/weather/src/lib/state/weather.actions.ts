@@ -5,7 +5,7 @@ export const WeatherActions = createActionGroup({
   source: 'Weather',
   events: {
     'Load Weather': props<{ data: string[] }>(),
-    'Load Weather Success': props<{ data: Weather, isLast: boolean }>(),
+    'Load Weather Success': props<{ data: Weather }>(),
     'Load Weather Failure': props<{ error: string }>()
   }
 });

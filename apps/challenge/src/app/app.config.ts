@@ -12,13 +12,14 @@ import {LocationEffects, locationReducer} from "~challenge/location";
 import {ErrorEffects} from "~challenge/error";
 import {QuoteEffects, quoteReducer} from "~challenge/quote";
 import {WeatherEffects, weatherReducer} from "~challenge/weather";
+import {WorldEffects, worldReducer} from "~challenge/economic";
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideIonicAngular({}),
-    provideEffects(AuthEffects, LocationEffects, ErrorEffects, QuoteEffects, WeatherEffects),
-    provideStore({location: locationReducer, auth: authReducer, quote: quoteReducer, weather: weatherReducer}),
+    provideEffects(AuthEffects, LocationEffects, ErrorEffects, QuoteEffects, WeatherEffects, WorldEffects),
+    provideStore({location: locationReducer, auth: authReducer, quote: quoteReducer, weather: weatherReducer, world: worldReducer}),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
     provideHttpClient(withFetch()),
     ...INJECTABLES

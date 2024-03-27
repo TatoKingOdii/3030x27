@@ -21,7 +21,7 @@ import {
   IonTitle,
   IonToolbar
 } from '@ionic/angular/standalone';
-import { DEFAULT_LOCATION, Loc } from '~challenge/location';
+import {DEFAULT_LOCATION, deleteLocation, Loc} from '~challenge/location';
 
 
 @Component({
@@ -62,13 +62,5 @@ export class LocationListComponent {
 
   constructor() {}
 
-  editLocation(idx: number | null) {
-    this.editLoc.emit(idx != null && this.locations ? this.locations[idx] : DEFAULT_LOCATION);
-  }
-
-  deleteLocation(idx: number) {
-    if (this.locations) {
-      this.deleteLoc.emit(this.locations[idx]);
-    }
-  }
+  protected readonly DEFAULT_LOCATION = DEFAULT_LOCATION;
 }

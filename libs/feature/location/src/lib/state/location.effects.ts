@@ -38,10 +38,7 @@ export class LocationEffects {
 
   saveLocations$ = createEffect(() => this.actions$.pipe(
     ofType(saveLocation),
-    map(action => {
-      let location = action.location;
-      return location.id ? updateLocation({location: location}) : createLocation({location: location});
-    }),
+    map(({ location }) => location.id ? updateLocation({ location })  : createLocation({ location }))
   ));
 
   createLocations$ = createEffect(() => this.actions$.pipe(

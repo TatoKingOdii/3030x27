@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonContent, IonFooter, IonHeader, IonText, IonTitle } from '@ionic/angular/standalone';
 import { RouterLink } from '@angular/router';
 import { FooterBarComponent } from '~challenge/footer';
-import { NavBarUnauthComponent } from '~challenge/auth';
+import {NavBarComponent} from '~challenge/auth';
 
 @Component({
   selector: 'app-unauthorized',
@@ -14,7 +14,7 @@ import { NavBarUnauthComponent } from '~challenge/auth';
     IonHeader,
     IonFooter,
     FooterBarComponent,
-    NavBarUnauthComponent
+    NavBarComponent
   ],
   templateUrl: './unauthorized.component.html',
   styleUrls: ['./unauthorized.component.scss'],

@@ -18,12 +18,13 @@ import {
 import { WeatherFacade } from '../state/weather.facade';
 import { FooterBarComponent } from '~challenge/footer';
 import { FutureDatePipe } from '../pipes/future-date.pipe';
-import { NavBarAuthComponent } from '~challenge/auth';
+import { NavBarComponent } from '~challenge/auth';
+import {WeatherSegmentComponent} from "./weather-segment/weather-segment.component";
 
 @Component({
   selector: 'app-weather',
   standalone: true,
-  imports: [CommonModule, IonContent, IonGrid, IonRow, IonCard, IonCardHeader, IonCardTitle, IonCol, IonCardContent, IonSpinner, IonHeader, NavBarAuthComponent, IonFooter, FooterBarComponent, FutureDatePipe, IonCardSubtitle, IonItem, IonLabel, IonAccordionGroup, IonAccordion],
+  imports: [CommonModule, IonContent, IonGrid, IonRow, IonCard, IonCardHeader, IonCardTitle, IonCol, IonCardContent, IonSpinner, IonHeader, NavBarComponent, IonFooter, FooterBarComponent, FutureDatePipe, IonCardSubtitle, IonItem, IonLabel, IonAccordionGroup, IonAccordion, WeatherSegmentComponent],
   templateUrl: './weather.page.html',
   styleUrl: './weather.page.scss',
 })

@@ -1,0 +1,27 @@
+<ion-list>
+  <ion-list-header>
+    <ion-label>
+        <h1>World Bank Locations</h1>
+    </ion-label>
+    <ion-button fill="outline" class="ion-float-right" (click)="refreshAll.emit()">
+      Refresh
+    </ion-button>
+    <ion-button fill="outline" class="ion-float-right ion-margin-end"
+                (click)="loadMore.emit(loadedPages! + 1)" [disabled]="loadedPages === maxPages">
+      Load More
+    </ion-button>
+  </ion-list-header>
+  @if (loadingWorlds && worldLocs?.length === 0) {
+    <ion-item style="display: grid" class="ion-align-items-center ion-justify-content-center">
+      <ion-spinner name="dots"></ion-spinner>
+    </ion-item>
+  } @else {
+    @for(wl of worldLocs; track wl.iso2Code) {
+      <ion-item>{{wl.name}}</ion-item>
+    } @empty {
+      <ion-item>
+        There are no locations!
+      </ion-item>
+    }
+  }
+</ion-list>

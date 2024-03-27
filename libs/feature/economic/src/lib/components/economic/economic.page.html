@@ -1,0 +1,21 @@
+<ion-header>
+  <app-nav-bar></app-nav-bar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="12">
+        <app-world-list [loadingWorlds]="worldFacade.loadingWorlds$ | async"
+                        [worldLocs]="worldFacade.currentWorldLocs$ | async"
+                        [loadedPages]="worldFacade.loadedToPage$ | async"
+                        [maxPages]="worldFacade.maxPages$ | async"
+                        (refreshAll)="worldFacade.refreshWorldLocs()"
+                        (loadMore)="worldFacade.loadWorldLocPage($event)">
+        </app-world-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <app-footer-bar></app-footer-bar>
+</ion-footer>

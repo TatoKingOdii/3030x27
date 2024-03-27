@@ -1,0 +1,9 @@
+{
+  "name": "economic",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/feature/economic/src",
+  "prefix": "c3030x27",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}

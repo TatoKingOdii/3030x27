@@ -3,7 +3,7 @@ import { IonContent, IonFooter, IonHeader, IonImg, IonText } from '@ionic/angula
 import { RouterLink } from '@angular/router';
 import { FooterBarComponent } from '~challenge/footer';
 import { CatUrlPipe } from '~challenge/cats';
-import { NavBarUnauthComponent } from '~challenge/auth';
+import { NavBarComponent } from '~challenge/auth';
 
 @Component({
   selector: 'app-landing',
@@ -16,7 +16,7 @@ import { NavBarUnauthComponent } from '~challenge/auth';
     IonImg,
     FooterBarComponent,
     CatUrlPipe,
-    NavBarUnauthComponent
+    NavBarComponent,
   ],
   templateUrl: './landing.page.html',
   styleUrls: ['./landing.page.scss'],

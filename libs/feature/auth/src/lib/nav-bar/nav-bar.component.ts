@@ -11,9 +11,10 @@ import {
 } from '@ionic/angular/standalone';
 import { AsyncPipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import {AuthFacade} from "../auth.facade";
 
 @Component({
-  selector: 'app-nav-bar-auth',
+  selector: 'app-nav-bar',
   imports: [
     IonToolbar,
     IonGrid,
@@ -26,11 +27,11 @@ import { RouterLink } from '@angular/router';
     IonButtons,
     IonContent
   ],
-  templateUrl: './nav-bar-auth.component.html',
-  styleUrls: ['./nav-bar-auth.component.scss'],
+  templateUrl: './nav-bar.component.html',
+  styleUrls: ['./nav-bar.component.scss'],
   standalone: true
 })
-export class NavBarAuthComponent {
+export class NavBarComponent {
 
-  constructor() { }
+  constructor(public authFacade: AuthFacade) { }
 }

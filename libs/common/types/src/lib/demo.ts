@@ -19,4 +19,10 @@ export const DEMOS: Demo[] = [
     description: 'Current weather for locations that have been configured.',
     route: '/weather'
   },
+  {
+    title: 'Da World',
+    subtitle: '',
+    description: 'General country information from the World Bank API.',
+    route: '/world'
+  }
 ] as const;
